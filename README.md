@@ -1,115 +1,102 @@
-Frontend Wizards Stage 0: Profile Card
-This project is a responsive, accessible Profile Card built with semantic HTML, CSS (Flexbox and Grid), and vanilla JavaScript. It meets all core requirements for the Frontend Wizards internship Stage 0, including data-testid attributes for automated testing, semantic markup, responsiveness across devices, and interactivity (avatar file upload and real-time clock). The design is modern and polished, inspired by contemporary profile card layouts, ensuring an excellent user experience.
+Frontend Wizards Profile Card
+Overview
+The Frontend Wizards Profile Card is a responsive and accessible web-based profile card designed to showcase a developer's personal information, including their avatar, bio, social media links, hobbies, dislikes, and current time. Built with HTML, CSS, and JavaScript, this project emphasizes clean design, user interaction, and accessibility. It features a modern layout with a focus on responsiveness across various devices and includes high-contrast mode support for accessibility.
 Features
 
-Semantic HTML: Uses <article>, <figure>, <nav>, <section>, and headings for structure and accessibility.
-Responsive Layout: Stacks vertically on mobile; avatar on the left and content on the right for tablet/desktop.
-Avatar Upload: Clicking/tapping the avatar directly opens the file explorer to upload an image, displayed via URL.createObjectURL.
-Real-Time Clock: Displays current time in milliseconds, updating every second using Date.now() and setInterval.
-Social Links: Inline SVG icons for Twitter (X), LinkedIn, and GitHub, opening in new tabs with rel="noopener noreferrer".
-Keyboard Navigation: Avatar and links are focusable with visible focus styles (Tab, Enter, Space keys).
-Accessible Elements: Includes alt text for images and ARIA considerations where needed.
-Polished Design: Uses Google Fonts ('Aleo'), subtle animations, and a clean layout with no emojis in section headers.
+Profile Information: Displays the user's name, title, and bio.
+Avatar Upload: Allows users to upload a custom profile image by clicking the avatar or using keyboard navigation (Enter/Space).
+Dynamic Time Display: Updates the current time every second using JavaScript.
+Social Media Links: Links to Twitter/X, LinkedIn, and GitHub with accessible SVG icons.
+Hobbies and Dislikes: Lists user hobbies and dislikes in a clean, styled format.
+Responsive Design: Adapts to various screen sizes (desktop, tablet, mobile) with media queries.
+Accessibility: Supports keyboard navigation and high-contrast mode for better accessibility.
+Custom Styling: Uses the Aleo font from Google Fonts and a consistent color scheme with hover effects.
 
-Project Structure
+Technologies Used
 
-index.html: Core structure with semantic HTML and embedded SVG social icons.
-style.css: Styles for responsiveness, layout, and modern design (Flexbox, Grid, media queries).
-script.js: Handles avatar upload, real-time clock, and keyboard accessibility.
-README.md: This documentation file.
+HTML5: For semantic structure.
+CSS3: For styling, including Flexbox, Grid, and media queries for responsiveness.
+JavaScript: For dynamic time updates and avatar upload functionality.
+Google Fonts: For the Aleo font used in headings.
+SVG Icons: For social media links.
 
 Prerequisites
+To run this project locally, ensure you have the following:
 
 A modern web browser (e.g., Chrome, Firefox, Edge).
-Git installed for cloning (optional for local testing; browser can open index.html directly).
-No dependencies or build tools required.
+A code editor (e.g., VS Code).
+Git installed to clone the repository.
+A local server (e.g., Live Server extension in VS Code or Node.js http-server) to serve the files.
 
-How to Clone and Run Locally
+Installation and Setup
+Follow these steps to run the project locally:
 
 Clone the Repository:
-Ensure Git is installed (git --version in terminal/command prompt).
-Run the following command in your terminal or command prompt:git clone https://github.com/thepromzzy/frontend-wizards-profile-card.git
+git clone https://github.com/thepromzzy/frontend-wizards-profile-card.git
 
-Replace your-username with your GitHub username.
-Navigate to the project folder:cd frontend-wizards-profile-card
+Navigate to the Project Directory:
+cd frontend-wizards-profile-card
 
 Open the Project:
-Double-click index.html to open in a browser, or use a local server (e.g., VS Code Live Server).
-Alternatively, run:open index.html # macOS
-start index.html # Windows
 
-Interact with the Card:
-Click/tap the avatar to upload an image (opens file explorer).
-Verify the time updates every second.
-Test social links (open in new tabs) and keyboard navigation (Tab, Enter, Space).
+If you have a local server like Live Server in VS Code, right-click index.html and select "Open with Live Server."
+Alternatively, use a Node.js-based server:npm install -g http-server
+http-server
 
-Step-by-Step Development Process
-The following steps outline how the project was built to meet the task requirements, ensuring supervisors can verify compliance and implementation details.
+Then, open your browser and navigate to http://localhost:8080.
 
-Initialize Project:
+View the Profile Card:Open the provided URL (e.g., http://localhost:8080) in your browser to see the profile card in action.
 
-Created a GitHub repository named frontend-wizards-profile-card.
-Set up files: index.html, style.css, script.js, README.md.
-Initialized Git: git init, added files, committed, and pushed to remote.
+Project Structure
+frontend-wizards-profile-card/
+├── index.html # Main HTML file for the profile card
+├── style.css # CSS file for styling the profile card
+├── script.js # JavaScript file for dynamic functionality
+├── images/ # Directory for storing avatar images (e.g., promise 1.jpg)
+└── README.md # Project documentation
 
-Build Semantic HTML:
+Usage
 
-Used <article data-testid="test-profile-card"> as the root container.
-Added avatar in <figure> with <img data-testid="test-user-avatar"> and hidden <input type="file">.
-Included name in <header> with <h2 data-testid="test-user-name">.
-Added bio in <p data-testid="test-user-bio">.
-Displayed time in <div data-testid="test-user-time"> within a styled section.
-Added social links in <nav data-testid="test-user-social-links"> with <ul> and <a> tags (e.g., data-testid="test-user-social-twitter").
-Created hobbies and dislikes in <section> tags with data-testid="test-user-hobbies" and data-testid="test-user-dislikes", using <ul> and <li>.
+View Profile: Open index.html in a browser to see the profile card with the default avatar, bio, social links, hobbies, and dislikes.
+Update Avatar: Click the avatar image or press Enter/Space when focused to upload a new profile picture (supports image formats like PNG, JPG).
+Check Time: The current time updates automatically every second in the "Current Time" section.
+Social Links: Click the social media icons to visit the respective profiles (Twitter/X, LinkedIn, GitHub).
+Responsive Testing: Resize the browser window or use developer tools to test the responsive layout on different screen sizes.
 
-Style with CSS:
+Accessibility Features
 
-Used Flexbox for header (avatar and name) and Grid for hobbies/dislikes.
-Applied media queries for responsiveness:
-Mobile (<768px): Vertical stack, smaller avatar (80px-100px).
-Tablet/Desktop (≥768px): Avatar left, content right.
+Keyboard Navigation: The avatar image is focusable and can be interacted with using the Enter or Space key.
+High-Contrast Mode: Enhanced borders and contrast for users with visual impairments.
+Semantic HTML: Uses proper HTML5 elements like <article>, <header>, <nav>, and <section> for better screen reader support.
+Alt Text: Avatar image includes descriptive alt text for accessibility.
 
-Styled social links as circular buttons with SVG icons, hover effects, and focus outlines.
-Ensured layout handles variable content lengths (word-wrap, max-width).
+Known Limitations
 
-Add JavaScript Interactivity:
+The avatar image (promise 1.jpg) must be present in the images/ directory for the default avatar to display correctly. If not available, update the src attribute in index.html or upload a new image.
+The time display currently shows a raw timestamp (Date.now()). For a formatted time, modify the updateTime function in script.js (see Future Improvements).
 
-On DOM load:
-Set real-time clock with setInterval to update Date.now() every second.
-On avatar click, trigger file input to open file explorer.
-On file change, update img src with URL.createObjectURL and set alt text.
-Added keyboard event listener for avatar (Enter/Space triggers click).
+Future Improvements
 
-Used vanilla JavaScript, no external libraries.
+Format the time display to show a human-readable format (e.g., HH:MM:SS).
+Add form validation for avatar uploads (e.g., file size or type restrictions).
+Implement a dark mode toggle for better user customization.
+Add animations for smoother transitions when changing avatars or hovering over links.
+Include unit tests for JavaScript functionality using a testing framework like Jest.
 
-Ensure Accessibility and Testability:
+Contributing
+Contributions are welcome! To contribute:
 
-Added descriptive alt text for avatar and social icons.
-Ensured focusable elements (avatar, links) with visible :focus styles.
-Verified all data-testid attributes match requirements exactly for automated tests.
-Tested keyboard navigation (Tab through elements, Enter/Space on avatar).
+Fork the repository.
+Create a new branch (git checkout -b feature/your-feature).
+Make your changes and commit (git commit -m "Add your feature").
+Push to the branch (git push origin feature/your-feature).
+Open a pull request.
 
-Validate and Test:
+Please ensure your code follows the existing style and includes appropriate comments.
 
-Tested locally in browser dev tools (Chrome, Firefox) for responsiveness and errors.
-Verified image upload, time updates, and link functionality.
-Ensured no console errors and layout stability with long content.
+Contact
+For questions or feedback, reach out via:
 
-Deploy and Document:
-
-Deployed to GitHub Pages (Settings > Pages > Source: main, root) or Netlify (drag-and-drop folder).
-Updated README with live URL and cloning instructions.
-Pushed final changes to GitHub.
-
-Testing Notes
-
-Automated Testing: All elements are discoverable via data-testid attributes (e.g., test-profile-card, test-user-time).
-Time Accuracy: Updates every second, within reasonable delta of Date.now().
-Avatar Upload: Clicking/tapping opens file explorer; uploaded images display correctly.
-Accessibility: Alt text, keyboard focus, and semantic markup ensure WCAG compliance.
-No Dependencies: Runs in any modern browser without setup.
-
-GitHub Pages:
-Go to repo Settings > Pages.
-Set Source to main branch, root folder.
-Save and wait for deployment (URL provided in Settings).
+GitHub: thepromzzy
+LinkedIn: promiseayodeji
+Twitter/X: @thepromzzy
