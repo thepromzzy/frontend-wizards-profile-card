@@ -1,3 +1,4 @@
+LIVE URL: https://thepromzzy.github.io/frontend-wizards-profile-card/
 Frontend Wizards Profile Card
 Overview
 The Frontend Wizards Profile Card is a responsive and accessible web-based profile card designed to showcase a developer's personal information, including their avatar, bio, social media links, hobbies, dislikes, and current time. Built with HTML, CSS, and JavaScript, this project emphasizes clean design, user interaction, and accessibility. It features a modern layout with a focus on responsiveness across various devices and includes high-contrast mode support for accessibility.
