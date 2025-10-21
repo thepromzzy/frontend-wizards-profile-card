@@ -1,103 +1,122 @@
-LIVE URL: https://thepromzzy.github.io/frontend-wizards-profile-card/
 Frontend Wizards Profile Card
 Overview
-The Frontend Wizards Profile Card is a responsive and accessible web-based profile card designed to showcase a developer's personal information, including their avatar, bio, social media links, hobbies, dislikes, and current time. Built with HTML, CSS, and JavaScript, this project emphasizes clean design, user interaction, and accessibility. It features a modern layout with a focus on responsiveness across various devices and includes high-contrast mode support for accessibility.
+The Frontend Wizards Profile Card is a multi-page web application showcasing a developer's profile, contact form, and personal reflections. Built with HTML, CSS, and JavaScript, it emphasizes semantic HTML, accessibility, responsiveness, and a unified design. The project includes a home page with a profile card, a Contact Us page with form validation, and an About Me page with reflective sections.
 Features
 
-Profile Information: Displays the user's name, title, and bio.
-Avatar Upload: Allows users to upload a custom profile image by clicking the avatar or using keyboard navigation (Enter/Space).
-Dynamic Time Display: Updates the current time every second using JavaScript.
-Social Media Links: Links to Twitter/X, LinkedIn, and GitHub with accessible SVG icons.
-Hobbies and Dislikes: Lists user hobbies and dislikes in a clean, styled format.
-Responsive Design: Adapts to various screen sizes (desktop, tablet, mobile) with media queries.
-Accessibility: Supports keyboard navigation and high-contrast mode for better accessibility.
-Custom Styling: Uses the Aleo font from Google Fonts and a consistent color scheme with hover effects.
+Home Page (Profile Card):
+Displays the user's name, title, bio, avatar, social media links, hobbies, dislikes, and current time.
+Allows avatar uploads via click or keyboard (Enter/Space).
+Updates current time dynamically every second.
+
+Contact Us Page:
+Form with fields for full name, email, subject, and message.
+Client-side validation: all fields required, valid email format, message ≥10 characters.
+Displays error messages for invalid inputs and a success message on valid submission.
+Fully accessible with labels, aria-describedby, and keyboard navigation.
+
+About Me Page:
+Reflective sections for bio, goals, areas of low confidence, note to future self, and extra thoughts.
+Semantic structure with <main>, <section>, and <h2> elements.
+
+Navigation:
+Unified navigation bar across all pages for seamless transitions.
+
+Design:
+Consistent styling with Aleo font, red accents (#d63637), and card-based layouts.
+Responsive across mobile, tablet, and desktop.
+Supports high-contrast mode for accessibility.
 
 Technologies Used
 
-HTML5: For semantic structure.
-CSS3: For styling, including Flexbox, Grid, and media queries for responsiveness.
-JavaScript: For dynamic time updates and avatar upload functionality.
-Google Fonts: For the Aleo font used in headings.
-SVG Icons: For social media links.
+HTML5: Semantic structure.
+CSS3: Flexbox, Grid, media queries for responsiveness.
+JavaScript: Dynamic time updates, avatar upload, and form validation.
+Google Fonts: Aleo font for headings.
+SVG Icons: Social media links.
 
 Prerequisites
-To run this project locally, ensure you have the following:
 
-A modern web browser (e.g., Chrome, Firefox, Edge).
-A code editor (e.g., VS Code).
-Git installed to clone the repository.
-A local server (e.g., Live Server extension in VS Code or Node.js http-server) to serve the files.
+Modern web browser (e.g., Chrome, Firefox, Edge).
+Code editor (e.g., VS Code).
+Git for cloning the repository.
+Local server (e.g., VS Code Live Server or Node.js http-server).
 
 Installation and Setup
-Follow these steps to run the project locally:
 
-Clone the Repository:
-git clone https://github.com/thepromzzy/frontend-wizards-profile-card.git
+Clone the Repository:git clone https://github.com/thepromzzy/frontend-wizards-profile-card.git
 
-Navigate to the Project Directory:
-cd frontend-wizards-profile-card
+Navigate to the Project Directory:cd frontend-wizards-profile-card
 
 Open the Project:
-
-If you have a local server like Live Server in VS Code, right-click index.html and select "Open with Live Server."
-Alternatively, use a Node.js-based server:npm install -g http-server
+Use VS Code Live Server: Right-click index.html and select "Open with Live Server."
+Or use Node.js http-server:npm install -g http-server
 http-server
 
-Then, open your browser and navigate to http://localhost:8080.
+Then visit http://localhost:8080.
 
-View the Profile Card:Open the provided URL (e.g., http://localhost:8080) in your browser to see the profile card in action.
+View the Application:
+Home: http://localhost:8080/index.html
+Contact: http://localhost:8080/contact.html
+About: http://localhost:8080/about.html
 
 Project Structure
 frontend-wizards-profile-card/
-├── index.html # Main HTML file for the profile card
-├── style.css # CSS file for styling the profile card
-├── script.js # JavaScript file for dynamic functionality
-├── images/ # Directory for storing avatar images (e.g., promise 1.jpg)
+├── index.html # Home page with profile card
+├── contact.html # Contact Us page with form
+├── about.html # About Me page with reflections
+├── style.css # Shared CSS for all pages
+├── script.js # JavaScript for home page
+├── contact.js # JavaScript for contact form validation
+├── images/ # Directory for avatar images (e.g., promise 1.jpg)
 └── README.md # Project documentation
 
 Usage
 
-View Profile: Open index.html in a browser to see the profile card with the default avatar, bio, social links, hobbies, and dislikes.
-Update Avatar: Click the avatar image or press Enter/Space when focused to upload a new profile picture (supports image formats like PNG, JPG).
-Check Time: The current time updates automatically every second in the "Current Time" section.
-Social Links: Click the social media icons to visit the respective profiles (Twitter/X, LinkedIn, GitHub).
-Responsive Testing: Resize the browser window or use developer tools to test the responsive layout on different screen sizes.
+Home Page: View profile details, upload a new avatar, and check social links or time.
+Contact Page: Fill out the form and submit. Validation ensures all fields are filled, email is valid, and message is ≥10 characters. Success message appears on valid submission.
+About Page: Read reflective sections about the developer's bio, goals, and thoughts.
+Navigation: Use the top navigation bar to switch between pages.
+Responsive Testing: Resize the browser or use developer tools to test across devices.
 
 Accessibility Features
 
-Keyboard Navigation: The avatar image is focusable and can be interacted with using the Enter or Space key.
-High-Contrast Mode: Enhanced borders and contrast for users with visual impairments.
-Semantic HTML: Uses proper HTML5 elements like <article>, <header>, <nav>, and <section> for better screen reader support.
-Alt Text: Avatar image includes descriptive alt text for accessibility.
+Keyboard Navigation: Avatar and form inputs are keyboard-accessible (Enter/Space).
+High-Contrast Mode: Enhanced borders for visibility.
+Semantic HTML: Uses <nav>, <main>, <section>, <article>, etc.
+Form Accessibility: Labels linked with for, error messages with aria-describedby.
+Alt Text: Avatar image has descriptive alt text.
 
 Known Limitations
 
-The avatar image (promise 1.jpg) must be present in the images/ directory for the default avatar to display correctly. If not available, update the src attribute in index.html or upload a new image.
-The time display currently shows a raw timestamp (Date.now()). For a formatted time, modify the updateTime function in script.js (see Future Improvements).
+Avatar image (promise 1.jpg) requires the images/ directory. Update src in index.html if unavailable.
+Time display shows raw timestamp (Date.now()). Modify script.js for formatted time (e.g., HH:MM:SS).
+Form submission is client-side only; no backend integration for sending messages.
 
 Future Improvements
 
-Format the time display to show a human-readable format (e.g., HH:MM:SS).
-Add form validation for avatar uploads (e.g., file size or type restrictions).
-Implement a dark mode toggle for better user customization.
-Add animations for smoother transitions when changing avatars or hovering over links.
-Include unit tests for JavaScript functionality using a testing framework like Jest.
+Format time display for readability.
+Add backend integration for form submissions (e.g., email API).
+Implement dark mode toggle.
+Add animations for smoother transitions.
+Include unit tests with Jest or React Testing Library.
 
 Contributing
-Contributions are welcome! To contribute:
 
 Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Make your changes and commit (git commit -m "Add your feature").
-Push to the branch (git push origin feature/your-feature).
+Create a branch: git checkout -b feature/your-feature.
+Commit changes: git commit -m "Add your feature".
+Push to branch: git push origin feature/your-feature.
 Open a pull request.
 
-Please ensure your code follows the existing style and includes appropriate comments.
-
+License
+MIT License. See LICENSE.
 Contact
-For questions or feedback, reach out via:
 
 GitHub: thepromzzy
 LinkedIn: promiseayodeji
 Twitter/X: @thepromzzy
+
+Submission
+
+Live URL: [Deployed URL, e.g., Netlify/GitHub Pages]
+GitHub Repo: https://github.com/thepromzzy/frontend-wizards-profile-card

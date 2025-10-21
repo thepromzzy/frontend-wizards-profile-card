@@ -10,12 +10,49 @@ body {
   background: #f8f9fa;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
 }
 
-.profile-card {
+.main-nav {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e1e5e9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  background: #d63637;
+  color: white;
+}
+
+.profile-card,
+.contact-card,
+.about-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -23,7 +60,6 @@ body {
   overflow: hidden;
   max-width: 800px;
   width: 100%;
-  margin: 0 auto;
 }
 
 .card-header {
@@ -34,7 +70,6 @@ body {
   border-bottom: 1px solid #e1e5e9;
 }
 
-/* Desktop and tablet layout */
 @media (min-width: 769px) {
   .card-header {
     display: flex;
@@ -43,20 +78,16 @@ body {
     text-align: left;
     padding: 2rem;
   }
-
   .avatar-section {
     margin-bottom: 0;
     flex-shrink: 0;
   }
-
   .name-section {
     flex: 1;
   }
-
   .user-name {
     margin: 0 0 0.5rem 0;
   }
-
   .user-title {
     margin: 0;
   }
@@ -246,79 +277,180 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Responsive Design */
+.contact-title,
+.about-title {
+  font-family: "Aleo", serif;
+  font-size: 2rem;
+  color: #2d3748;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.contact-card,
+.about-card {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #2d3748;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #d63637;
+  box-shadow: 0 0 0 3px rgba(214, 54, 55, 0.1);
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: #d63637;
+}
+
+textarea.form-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.error-message {
+  color: #d63637;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  color: #2d3748;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 1rem;
+  background: #f7f9fc;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e1e5e9;
+}
+
+.form-submit {
+  background: #d63637;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-submit:hover,
+.form-submit:focus {
+  background: #b32d2e;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.about-section h2 {
+  font-family: "Aleo", serif;
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 10px;
   }
-
-  .card-header {
+  .card-header,
+  .contact-card,
+  .about-card {
     padding: 1.5rem;
   }
-
-  .user-name {
+  .user-name,
+  .contact-title,
+  .about-title {
     font-size: 1.5rem;
   }
-
   .avatar {
     width: 100px;
     height: 100px;
   }
-
   .card-content {
     padding: 1.5rem;
   }
-
   .lists-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
   .social-links {
     justify-content: center;
   }
-
   .social-link {
     width: 48px;
     height: 48px;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
-  .card-header {
+  .card-header,
+  .contact-card,
+  .about-card {
     padding: 1rem;
   }
-
-  .card-content {
-    padding: 1rem;
-  }
-
-  .user-name {
+  .user-name,
+  .contact-title,
+  .about-title {
     font-size: 1.3rem;
   }
-
   .avatar {
     width: 80px;
     height: 80px;
   }
-
-  .user-bio {
+  .user-bio,
+  .about-section p {
     font-size: 1rem;
   }
-
   .social-link {
     width: 48px;
     height: 48px;
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
-  .profile-card {
+  .profile-card,
+  .contact-card,
+  .about-card {
     border: 2px solid #000;
   }
-
-  .social-link {
+  .social-link,
+  .form-input,
+  .form-submit {
     border: 2px solid #000;
   }
 }
