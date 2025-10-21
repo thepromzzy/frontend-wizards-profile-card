@@ -1,6 +1,6 @@
 Frontend Wizards – Stage 1
 Multi-page profile app with a responsive profile card, contact form, and about page.
-Live Demo: https://promiseprofilecard.netlify.app/ Repo: github.com/thepromzzy/frontend-wizards-profile-card
+Live Demo: https://promiseprofilecard.netlify.app/ Repo: https://github.com/thepromzzy/frontend-wizards-profile-card.git
 
 Features
 
